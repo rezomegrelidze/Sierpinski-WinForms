@@ -45,7 +45,7 @@ namespace WindowsFormsScratchpad
             var r = new PointF(p.X+triangleWidth/2.0f,triangleHeight);
 
 
-            g.DrawPolygon(Pens.Black,new []{p,q,r});
+            g.FillPolygon(Brushes.Black,new []{p,q,r});
 
             DrawSierpinski(g,p,q,r,0);
         }
@@ -55,7 +55,7 @@ namespace WindowsFormsScratchpad
             if (depth > maxDepth) return;
 
 
-            g.FillPolygon(Brushes.Black, new[]
+            g.FillPolygon(Brushes.White, new[]
             {
                 MidPoint(q,p),
                 MidPoint(r,p),
@@ -71,6 +71,12 @@ namespace WindowsFormsScratchpad
 
         private void Form1_Resize(object sender, EventArgs e)
         {
+            CoordinatePictureBox.Invalidate();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            maxDepth = trackBar1.Value;
             CoordinatePictureBox.Invalidate();
         }
     }

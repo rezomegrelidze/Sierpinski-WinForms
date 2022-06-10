@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.CoordinatePictureBox = new System.Windows.Forms.PictureBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.CoordinatePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // CoordinatePictureBox
@@ -42,23 +44,36 @@
             this.CoordinatePictureBox.TabStop = false;
             this.CoordinatePictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.CoordinatePictureBox_Paint);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(344, 0);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(321, 69);
+            this.trackBar1.TabIndex = 1;
+            this.trackBar1.Value = 1;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // SierpinskiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 944);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.CoordinatePictureBox);
             this.Name = "SierpinskiForm";
             this.Text = "Sierpinski Triangle";
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.CoordinatePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox CoordinatePictureBox;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 
